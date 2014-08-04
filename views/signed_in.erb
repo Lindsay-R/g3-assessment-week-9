@@ -25,7 +25,9 @@
     <h2>ToDo List</h2>
     <ul class="todos">
       <% todos.each do |todo| %>
-          <li><%= todo.body %></li>
+          <li><%= todo.body %>
+            <input type="submit" value="Edit"/>
+          </li>
       <% end %>
     </ul>
   </div>
