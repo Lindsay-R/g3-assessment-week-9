@@ -67,12 +67,27 @@ class ToDoApp < Sinatra::Application
     redirect "/"
   end
 
+  #lindsay's additions...
   get "/edit_todo" do
-    erb :edit_todo, locals: {user: User.new}
+    ToDoItem.find_by(params[:id])
+    erb :edit_todo, locals: {body: body}
   end
+
   post "/edit_todo" do
+
     redirect "/edit_todo"
   end
+
+  patch "/todos/:id" do
+    ToDoItem.update(body: params[:body])
+
+    flash[:notice] = "ToDo added"
+
+    redirect "/"
+  end
+
+
+
 
   private
 

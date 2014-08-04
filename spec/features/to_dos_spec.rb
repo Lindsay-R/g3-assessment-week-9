@@ -27,7 +27,7 @@ feature "ToDos" do
     end
 
     #Edit to do
-    click_link "Edit"
+    click_button "Edit"
     expect(page).to have_content "Edit ToDo"
     expect(page).to have_content "Get a haircut"
     fill_in "What do you need to do?", with: "Get a bitch'n haircut"
