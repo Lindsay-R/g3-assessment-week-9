@@ -25,5 +25,14 @@ feature "ToDos" do
     within ".todos" do
       expect(page).to have_content "Get a haircut"
     end
-  end
-end
+
+    #Edit to do
+    click_link "Edit"
+    expect(page).to have_content "Edit ToDo"
+    expect(page).to have_content "Get a haircut"
+    fill_in "What do you need to do?", with: "Get a bitch'n haircut"
+    click_button "Update ToDo"
+    expect(page).to have_content "Get a bitch'n haircut"
+  end #end scenario
+
+end #end feature

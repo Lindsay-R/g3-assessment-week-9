@@ -26,7 +26,10 @@
     <ul class="todos">
       <% todos.each do |todo| %>
           <li><%= todo.body %>
+            <!--#added edit button-->
+            <form action="/edit_todo" method="post">
             <input type="submit" value="Edit"/>
+            </form>
           </li>
       <% end %>
     </ul>

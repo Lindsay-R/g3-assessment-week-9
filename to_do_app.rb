@@ -67,6 +67,13 @@ class ToDoApp < Sinatra::Application
     redirect "/"
   end
 
+  get "/edit_todo" do
+    erb :edit_todo, locals: {user: User.new}
+  end
+  post "/edit_todo" do
+    redirect "/edit_todo"
+  end
+
   private
 
   def authenticate_user
